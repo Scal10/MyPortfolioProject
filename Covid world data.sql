@@ -1,3 +1,5 @@
+--                                          COVID WORLD DATA AS AT JULY 2022
+
 SELECT *
     FROM PortfolioProject.dbo.[Covid Deaths]
     WHERE continent IS NOT NULL
