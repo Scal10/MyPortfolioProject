@@ -3,7 +3,7 @@
 SELECT *
     FROM PortfolioProject.dbo.[Covid Deaths]
     WHERE continent IS NOT NULL
-    ORDER BY 1,2
+    ORDER BY 2
 
 -- Starting with the data below
 SELECT location, date, total_cases, new_cases, total_deaths, population
@@ -56,7 +56,7 @@ SELECT location, MAX(CAST(total_deaths as int)) AS 'Total death count'
 
 -- Showing Continents with the highest death count per population
 
-SELECT continent, MAX(CAST(total_deaths as int)) AS 'Total death count'
+SELECT continent, SUM(CAST(new_deaths as int)) AS 'Total death count'
     FROM PortfolioProject.dbo.[Covid Deaths]
     WHERE continent IS NOT NULL
     GROUP BY continent
